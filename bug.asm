@@ -1,0 +1,1 @@
+mov eax, [esi+edi*4] ; This line is the source of the bug.  It assumes that esi points to an array of 4-byte integers, and edi holds the index. However, if edi is negative or very large, it may cause an access violation. This is an uncommon bug because it requires a specific combination of values in esi and edi, which might not always occur during typical program execution.
